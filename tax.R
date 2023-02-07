@@ -3,7 +3,7 @@ tax <- function(annual_salary_gross, tax_rates, salaries, social, health){
   annual_salary <- annual_salary_gross * (1 - social - health)
   
   diff_salaries <- diff(salaries)
-  diff_tax <- tax_rates[1:4] * diff(salaries)
+  diff_tax <- tax_rates[1:length(tax_rates) - 1] * diff(salaries)
   cum_tax <- append(cumsum(diff_tax), 0, 0)
   # print(cum_tax)
   
